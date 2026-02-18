@@ -4,7 +4,7 @@ from datetime import datetime
 from task_manager.validation import validate_task_title, validate_task_description, validate_due_date
 
 # Define tasks list
-tasks = []
+tasks = [{'title':'Task 1', 'description':'testing','due_date':'2024_05_26','completed': True},{'title':'Task 2', 'description':'testing','due_date':'2024_05_26','completed': False}]
 
 # Implement add_task function
 def add_task(title, description, due_date):
@@ -32,7 +32,7 @@ def mark_task_as_complete(index, tasks=tasks):
         print("Task with the index does not exist.")
         return
     else :
-        tasks[index]['isComplete'] = True
+        tasks[index]['completed'] = True
         print("Task marked as complete!")
     
 # Implement view_pending_tasks function
@@ -46,8 +46,8 @@ def calculate_progress(tasks=tasks):
     completed_tasks = []
     
     for task in tasks :
-        if 'isComplete' in task.keys() :
+        if task['completed'] == True :
             completed_tasks.append(task)
             
-    progress = f"You have completed {(len(completed_tasks)/ len(tasks)) * 100}% of your tasks"
+    progress = (len(completed_tasks)/ len(tasks)) * 100
     return progress

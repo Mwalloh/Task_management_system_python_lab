@@ -4,7 +4,6 @@ from task_manager.task_utils import add_task, mark_task_as_complete, view_pendin
 # Define the main function
 def main():
     while True:
-        print("⏰ --------------------------- ⏳")
         print("Task Management System")
         print("1. Add Task")
         print("2. Mark Task as Complete")
@@ -31,7 +30,7 @@ def main():
         elif choice == "3" :
             view_pending_tasks()
         
-        elif choice == "4" :
+        elif choice == "4" :            
             progress = calculate_progress()
             print(progress)
             

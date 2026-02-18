@@ -2,36 +2,36 @@ from datetime import datetime
 
 def validate_task_title(title):
     # Trim whitespace
-    new_title = title.strip()
+    title = title.strip()
     
-    if not new_title :
-        print("❌ Title cannot be empty.")
+    if not title :
+        raise ValueError ("❌ Title cannot be empty.")
     
-    if len(new_title) < 3  :
-        print("❌ Task title cannot be less than 3 characters.")
+    if len(title) < 3  :
+        raise ValueError("❌ Task title cannot be less than 3 characters.")
         
-    if len(new_title) > 100 :
-        print("❌ Task title cannot be more than 100 characters.")
+    if len(title) > 100 :
+        raise ValueError("❌ Task title cannot be more than 100 characters.")
     
-    return new_title
+    return title
     
 def validate_task_description(description):
     # Trim whitespace
-    new_description = description.strip()
+    description = description.strip()
     
-    if not new_description :
-        print("❌ Description cannot be empty.")
+    if not description :
+        raise ValueError("❌ Description cannot be empty.")
     
-    if len(new_description) > 500 :
-        print("❌ Description cannot be more than 500 characters.")
+    if len(description) > 500 :
+        raise ValueError("❌ Description cannot be more than 500 characters.")
     
-    return new_description
+    return description
     
 def validate_due_date(due_date):
     # Trim whitespace
-    new_due_date = due_date.strip()
+    due_date = due_date.strip()
     
-    if not new_due_date :
-        print("❌ Date cannot be empty.")
+    if not due_date :
+        raise ValueError("❌ Date cannot be empty.")
     
-    return new_due_date
+    return due_date
